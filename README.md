@@ -1,66 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Proyecto de Consultorio Médico en Laravel 9
+Estudiante: Jaime Junior Aguilar leaños
+Materia : Tecnologia web 2
+Turno : Noche
+Docente : Ing.Zambrana Chacon Jaime
+Este proyecto de consultorio médico está desarrollado utilizando el potente framework Laravel. Laravel es conocido por su sintaxis expresiva y elegante, haciendo que el desarrollo de aplicaciones web sea una experiencia agradable y creativa.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Instalación y Uso
+Clona el repositorio.
 
-## About Laravel
+Ejecuta las migraciones y seeders para configurar la base de datos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+composer install
+php artisan migrate --seed
+php artisan db:seed --class=UsuariosTableSeeder
+php artisan db:seed --class=PacientesTableSeeder
+php artisan db:seed --class=HistoriasTableSeeder
+php artisan db:seed --class=CitasTableSeeder
+php artisan db:seed --class=RecetariosTableSeeder
+php artisan db:seed --class=RolusuariosTableSeeder
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Asegúrate de tener las versiones correctas de PHP y Composer:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+php --version
+composer --version
+Si estás iniciando un nuevo proyecto, puedes crearlo con:
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+composer create-project laravel/laravel ConsultorioMedico "9.*"
+Estructura de Base de Datos
+Este proyecto utiliza migraciones para definir la estructura de la base de datos. A continuación, se presentan los comandos para crear y migrar las tablas:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+php artisan make:migration create_usuario_table
+php artisan make:migration create_paciente_table
+php artisan make:migration create_historia_table
+php artisan make:migration create_recetario_table
+php artisan make:migration create_citas_table
+php artisan make:migration create_rol_usuario_table
 
-## Laravel Sponsors
+php artisan migrate
+También se crean modelos correspondientes a cada tabla:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+php artisan make:model Usuario
+php artisan make:model Paciente
+php artisan make:model Historia
+php artisan make:model Recetario
+php artisan make:model Citas
+php artisan make:model Rolusuario
+Y controladores asociados:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+php artisan make:controller UsuarioController
+php artisan make:controller PacienteController
+php artisan make:controller HistoriaController
+php artisan make:controller RecetarioController
+php artisan make:controller CitasController
+php artisan make:controller RolusuarioController
+Además, se generan seeders para poblar la base de datos:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+php artisan make:seeder UsuariosTableSeeder
+php artisan make:seeder PacientesTableSeeder
+php artisan make:seeder HistoriasTableSeeder
+php artisan make:seeder CitasTableSeeder
+php artisan make:seeder RecetariosTableSeeder
+php artisan make:seeder RolusuariosTableSeeder
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Contribuciones
+¡Gracias por considerar contribuir al proyecto! Consulta la guía de contribuciones para obtener más información.
 
-## Security Vulnerabilities
+Código de Conducta
+Asegúrate de revisar y seguir nuestro Código de Conducta para crear un ambiente acogedor para todos.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Reporte de Vulnerabilidades de Seguridad
+Si encuentras alguna vulnerabilidad de seguridad en Laravel, por favor, notifícala enviando un correo electrónico a Taylor Otwell a través de taylor@laravel.com. Todas las vulnerabilidades de seguridad se abordarán de manera rápida.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Licencia
+Este proyecto utiliza el framework Laravel, que está bajo la licencia MIT.
