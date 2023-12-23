@@ -7,6 +7,7 @@ Este proyecto de consultorio médico está desarrollado utilizando el potente fr
 
 Instalación y Uso
 Clona el repositorio.
+https://github.com/Zcjota/ColsultasMedicas.git
 
 Ejecuta las migraciones y seeders para configurar la base de datos.
 
